@@ -1,39 +1,49 @@
 import React, { Component } from 'react';
-import * as ReactBootStrap from 'react-bootstrap';
+
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
     render() {
         return (
-            <div className="App">
-                <div>
-                    <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <div>
+                <nav className="navbar navbar-dark bg-dark">
+                    <div className="container">
 
-                        {/* <ReactBootStrap.Navbar.Brand href="#home">Personal Expense Wallet</ReactBootStrap.Navbar.Brand> */}
-                        <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
-                            <ReactBootStrap.Nav className="me-auto">
-                                <ReactBootStrap.Nav.Link href="#features">Wallet Panel</ReactBootStrap.Nav.Link>
-                            </ReactBootStrap.Nav>
-                            <ReactBootStrap.Nav>
-                                <ReactBootStrap.Navbar.Brand href="#home" style={styles}>Personal Expense Wallet</ReactBootStrap.Navbar.Brand>
-                            </ReactBootStrap.Nav>
-                            <ReactBootStrap.Nav>
-                                <ReactBootStrap.NavDropdown title="Sign in options" id="collasible-nav-dropdown">
-                                    <ReactBootStrap.NavDropdown.Item href="#action/3.1">Sign up/ Register</ReactBootStrap.NavDropdown.Item>
-                                    <ReactBootStrap.NavDropdown.Item href="#action/3.2">Sign in</ReactBootStrap.NavDropdown.Item>
-                                </ReactBootStrap.NavDropdown>
-                            </ReactBootStrap.Nav>
-                        </ReactBootStrap.Navbar.Collapse>
+                        <Link className="navbar-brand order-1 " to="/">
+                            Personal Expense Wallet
+                        </Link>
+                        <button className="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#mobile-nav">
+                            <span className="navbar-toggler-icon" />
+                        </button>
 
-                    </ReactBootStrap.Navbar>
-                </div>
+                        <div className="collapse navbar-collapse order-3" id="mobile-nav">
+                            <ul className="navbar-nav mr-auto">
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/WalletPanel">
+                                        Wallet Panel
+                                    </Link>
+                                </li>
+                            </ul>
+
+                            <ul className="navbar-nav ml-auto">
+                                <li className="nav-item">
+                                    <a className="nav-link " href="register.html">
+                                        Sign Up
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="login.html">
+                                        Login
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
 
         )
     }
 }
 
-const styles = {
-    marginRight: 500   
-}
 export default Navbar
