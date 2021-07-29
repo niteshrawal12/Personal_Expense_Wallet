@@ -4,6 +4,8 @@ import Navbar from './component/Navbar'
 import Welcome from './component/Welcome'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WalletCreate from './component/WalletPanel/WalletFunction/WalletCreate';
+import Transaction from './component/transaction/Transaction'
+import AddTransaction from './component/transaction/transactionoperation/AddTransaction';
 import NotFound from './component/NotFound'
 import { Provider } from 'react-redux';
 import store from './Store';
@@ -22,6 +24,8 @@ function App() {
           <Route path="/WalletPanel" exact component={WalletPanel} />
           <Route path="/WalletCreate" exact component={WalletCreate} />
           <Route path="/WalletUpdate/:id" exact component={WalletUpdate} />
+          <Route path="/transactions/:id" exact component={Transaction} />
+          <Route path="/trns/add/:id" exact component={AddTransaction} />
           <Route path="/" component={NotFound} />
         </Switch>
       </BrowserRouter>
