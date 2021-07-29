@@ -69,7 +69,7 @@ class WalletCreate extends Component {
                                         <option value={3}>Low</option>
                                     </select>
                                 </div>
-                                <input type="submit" className="btn btn-success btn-block mt-4" value="Create or Update" />
+                                <input type="submit" className="btn btn-success btn-block mt-4" value="Create" />
                             </form>
                         </div>
                     </div>

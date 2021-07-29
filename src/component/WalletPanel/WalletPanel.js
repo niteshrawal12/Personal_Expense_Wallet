@@ -1,9 +1,35 @@
 import React, { Component } from 'react'
 import WalletPanelBoard from './WalletPanelBoard'
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux'
+import {getWallets} from '../../Actions/ProjectActions'
 
 class WalletPanel extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             totalBalance: 0.00
+        }
+    }
+    
+    componentWillReceiveProps(nextProps){
+        if(nextProps.wallets){
+            let totalBal = 0;
+            for(let i=0;i<nextProps.wallets.length;i++){
+                totalBal = totalBal+nextProps.wallets[i].currentBalance
+            }
+            this.setState({totalBalance:totalBal})
+        }
+    }
+
+    componentDidMount(){
+        this.props.getWallets()
+    }
     render() {
+        const wallets = this.props.wallets
+        const walletComponent = wallets.map(wallet=>(<WalletPanelBoard key={wallet.id} wallet={wallet} />))
+        
         return (
             <div className="projects">
                 <div className="container">
@@ -23,14 +49,14 @@ class WalletPanel extends Component {
                             <br />
                             <div className="card text-center">
                                 <div className="card-header">
-                                    <h4 class="card-title"> Total Current Balance</h4>
-                                    <h1>Rs. 0.00</h1>
+                                    <h4 className="card-title"> Total Current Balance</h4>
+                                    <h1>Rs. {this.state.totalBalance}</h1>
                                 </div>
                             </div>
                             <hr />
 
+                           {walletComponent}
                            
-                            <WalletPanelBoard />
                             
 
 
@@ -41,5 +67,7 @@ class WalletPanel extends Component {
         )
     }
 }
-
-export default WalletPanel
+const mapStateToProps = (state) => ({
+    wallets:state.wallet.wallets
+})
+export default connect(mapStateToProps,{getWallets})(WalletPanel)
