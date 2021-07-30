@@ -27,19 +27,15 @@ class WalletPanelBoard extends Component {
                         </div>
                         <div className="col-md-4 col-12 d-lg-block">
                             <ul className="list-group">
-                                <Link to={`/transactions/${wallet.id}`}>
-                                    <li className="list-group-item board text-success">
-                                        <i className="fa fa-flag-checkered pr-1"> View Transactions </i>
-                                    </li>
-                                </Link>
+                               
                                 <Link to={`/WalletUpdate/${wallet.id}`}>
-                                    <li className="list-group-item update text-info">
-                                        <i className="fa fa-edit pr-1"> Update Account Info</i>
+                                    <li className="list-group-item list-group-item-dark">
+                                        <i className="fa fa-edit pr-1"> Update Account Information</i>
                                     </li>
                                 </Link>
                                 <Link to="/WalletPanelBoard" onClick={()=>this.deleteBtnClick()} >
                                     <li className="list-group-item delete text-danger">
-                                        <i className="fa fa-minus-circle pr-1"> Delete Account</i>
+                                        <i className="fa fa-minus-circle pr-1"> Delete this Account</i>
                                     </li>
                                 </Link>
                             </ul>

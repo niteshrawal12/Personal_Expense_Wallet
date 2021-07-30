@@ -43,7 +43,7 @@ class WalletPanel extends Component {
                                 </button>
                                 <div className="dropdown-menu">
                                     <Link className="dropdown-item" to="/WalletCreate">Wallet</Link>
-                                    <button disabled className="dropdown-item">Transaction</button>
+                                   
                                 </div>
                             </div>
                             <br />

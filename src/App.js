@@ -4,8 +4,8 @@ import Navbar from './component/Navbar'
 import Welcome from './component/Welcome'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WalletCreate from './component/WalletPanel/WalletFunction/WalletCreate';
-import Transaction from './component/transaction/Transaction'
-import AddTransaction from './component/transaction/transactionoperation/AddTransaction';
+
+
 import NotFound from './component/NotFound'
 import { Provider } from 'react-redux';
 import store from './Store';
@@ -13,6 +13,8 @@ import store from './Store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import WalletPanel from './component/WalletPanel/WalletPanel';
 import WalletUpdate from './component/WalletPanel/WalletFunction/WalletUpdate';
+import Login from './component/Login';
+import Register from './component/Register';
 
 function App() {
   return (
@@ -24,8 +26,9 @@ function App() {
           <Route path="/WalletPanel" exact component={WalletPanel} />
           <Route path="/WalletCreate" exact component={WalletCreate} />
           <Route path="/WalletUpdate/:id" exact component={WalletUpdate} />
-          <Route path="/transactions/:id" exact component={Transaction} />
-          <Route path="/trns/add/:id" exact component={AddTransaction} />
+          <Route path="/Login" exact component={Login} />
+          <Route path="/Register" exact component={Register} />
+         
           <Route path="/" component={NotFound} />
         </Switch>
       </BrowserRouter>
