@@ -9,7 +9,7 @@ class Register extends Component {
                         <div className="col-md-8 m-auto">
                             <h1 className="display-4 text-center">Sign Up</h1>
                             <p className="lead text-center">Create your Account</p>
-                            <form action="login.html">
+                            <form action="/">
                                 <div className="form-group">
                                     <input type="text" className="form-control form-control-lg" placeholder="Name" name="name"
                                         required />

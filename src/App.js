@@ -16,6 +16,7 @@ import WalletUpdate from './component/WalletPanel/WalletFunction/WalletUpdate';
 import Login from './component/Login';
 import Register from './component/Register';
 
+
 function App() {
   return (
     <Provider store={store}>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/WalletUpdate/:id" exact component={WalletUpdate} />
           <Route path="/Login" exact component={Login} />
           <Route path="/Register" exact component={Register} />
+         
          
           <Route path="/" component={NotFound} />
         </Switch>

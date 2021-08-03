@@ -9,7 +9,7 @@ class Login extends Component {
                     <div className="row">
                         <div className="col-md-8 m-auto">
                             <h1 className="display-4 text-center">Log In</h1>
-                            <form action="dashboard.html">
+                            <form action="/WalletPanel">
                                 <div className="form-group">
                                     <input type="email" className="form-control form-control-lg" placeholder="Email Address" name="email" />
                                 </div>

@@ -33,7 +33,7 @@ class WalletPanelBoard extends Component {
                                         <i className="fa fa-edit pr-1"> Update Account Information</i>
                                     </li>
                                 </Link>
-                                <Link to="/WalletPanelBoard" onClick={()=>this.deleteBtnClick()} >
+                                <Link to="/WalletPanel" onClick={()=>this.deleteBtnClick()} >
                                     <li className="list-group-item delete text-danger">
                                         <i className="fa fa-minus-circle pr-1"> Delete this Account</i>
                                     </li>
